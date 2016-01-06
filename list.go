@@ -7,7 +7,7 @@ package main
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/FactomProject/fctwallet/Wallet/Utility"
+	"github.com/FactomProject/fctwallet2/Wallet/Utility"
 )
 
 /************************************************************
