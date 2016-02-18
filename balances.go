@@ -73,17 +73,17 @@ func GetRate(state IState) (int64, error) {
 	resp.Body.Close()
 
 	type x struct {
-		Response string
-		Success  bool
+		Response struct {
+			Fee int64
+		}
+		Success bool
 	}
 	b := new(x)
 	if err = json.Unmarshal(body, b); err != nil {
 		return 0, err
 	}
 
-	fee, err := strconv.ParseInt(b.Response, 10, 64)
-
-	return fee, err
+	return b.Response.Fee, err
 
 }
 
